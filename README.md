@@ -50,6 +50,23 @@ unzip v2.3.zip
 pip install TIGRE-2.3/Python --no-build-isolation
 ```
 
+We notice that there might be some installation issues with Conda. You can alternatively try installing via pip (adapted from [4DRGS](https://github.com/ShanghaiTech-IMPACT/4DRGS)).
+
+```sh
+git clone https://github.com/Ruyi-Zha/r2_gaussian.git --recursive
+conda create -n r2_gaussian python=3.9 -y
+conda activate r2_gaussian
+
+pip install torch==2.1.2+cu118 torchvision==0.16.2+cu118 --extra-index-url https://download.pytorch.org/whl/cu118
+pip install -r requirements.txt
+pip install -e r2_gaussian/submodules/simple-knn
+pip install -e r2_gaussian/submodules/xray-gaussian-rasterization-voxelization
+
+wget https://github.com/CERN/TIGRE/archive/refs/tags/v2.3.zip
+unzip v2.3.zip
+pip install TIGRE-2.3/Python --no-build-isolation
+```
+
 ## 2. Dataset
 
 You can download datasets (synthetic and real) used in our paper [here](https://drive.google.com/drive/folders/1YZ3w87XrCNyjDRos6gkY8zgT5hESl-PN?usp=sharing). We follow NeRF format (folders with `meta_data.json`). You can find more details of data format and generation process in [synthetic dataset](data_generator/synthetic_dataset/README.md) and [real dataset](data_generator/real_dataset/README.md). Organize data as follows.

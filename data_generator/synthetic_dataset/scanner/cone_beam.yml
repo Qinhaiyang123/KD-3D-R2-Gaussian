@@ -40,9 +40,9 @@ accuracy: 0.5 # Accuracy of FWD proj
 totalAngle: 360.0 # Total angle  (degree)
 startAngle: 0.0 # Start angle (degree)
 
-# Noise
+# Noise (follow TIGRE https://github.com/CERN/TIGRE/blob/master/Python/demos/d03_generateData.py)
 noise: true
-possion_noise: 10000  # lambda for possion
+possion_noise: 100000  # lambda for possion
 gaussian_noise: # mean and std for gaussian
 - 0 # mean
 - 10 # std
